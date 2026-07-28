@@ -112,6 +112,12 @@ func main() {
 		Action:      diffAction,
 	}
 
+	configureCmd := clitools.ConfigureCliCommands("eleconf", clitools.DefaultApplicationID)
+	configureCmd.Flags = append(configureCmd.Flags, &cli.StringFlag{
+		Name:    "env",
+		Sources: cli.EnvVars("ENV"),
+	})
+
 	app := &cli.Command{
 		Name:  "eleconf",
 		Usage: "Elephant repository configuration tool",
@@ -121,7 +127,7 @@ func main() {
 			&applyCmd,
 			&generationCmd,
 			&diffCmd,
-			clitools.ConfigureCliCommands("eleconf", clitools.DefaultApplicationID),
+			configureCmd,
 		},
 	}
 
