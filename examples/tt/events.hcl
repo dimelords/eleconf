@@ -21,9 +21,3 @@ document "core/event" {
     expression = ".meta(type='core/event').data{start, end}"
   }
 }
-
-document "core/organiser" {
-  statuses = [
-    "usable",
-  ]
-}

@@ -122,7 +122,7 @@ To apply the configuration to a repository installation run `apply`:
 eleconf apply -env stage -dir examples/tt
 ```
 
-The `apply` command accepts `--env` to select the environment configuration, and optionally `--client-id` and `--client-secret` for client credentials authentication. The repository endpoint is resolved from the environment configuration.
+The `apply` command requires `--env` (or `ENV`) to select the environment configuration, and optionally accepts `--client-id` and `--client-secret` for client credentials authentication. The repository endpoint is resolved from the environment configuration. Environments are shared with the other elephant CLI tools; `eleconf configure --well-known` sets up the TT and NTB stage and prod environments, and `eleconf configure list` shows what is configured.
 
 This will compare the current configuration with the one declared in the configuration directory, detail the changes, and ask for confirmation before applying.
 

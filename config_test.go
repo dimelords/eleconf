@@ -121,3 +121,10 @@ document "core/article#timeless" {
 		t.Fatalf("expected 2 documents, got %d", len(conf.Documents))
 	}
 }
+
+func TestReadConfigFromDirectory_Example(t *testing.T) {
+	_, err := eleconf.ReadConfigFromDirectory(filepath.Join("examples", "tt"))
+	if err != nil {
+		t.Fatalf("read example configuration: %v", err)
+	}
+}
